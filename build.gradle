@@ -1,0 +1,29 @@
+plugins {
+    id 'org.springframework.boot' version '2.7.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.springframework', name: 'spring-web', version: '5.3.20'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.metrics:spring-metrics:0.5.1.RELEASE'
+    implementation 'com.netflix.spectator:spectator-api:0.55.0'
+    implementation 'org.springframework:spring-aspects'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
